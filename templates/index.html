@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+       
+    {% if title %}
+        <title> PythaBlog - {{ title }}</title>
+    {% else %}
+    <title> PythaBlog</title>
+    {% endif %}  
 </head>
 <body>
-    Home
+    {% for post in posts %}
+        <h1>{{ post.author }}</h1>
+        <h1>{{ post.title }}</h1>
+        <h1>{{ post.content }}</h1>
+        <h1>{{ post.date_posted }}</h1>
+    {% endfor %}
 </body>
 </html>
