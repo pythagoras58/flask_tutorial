@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
-    {% if title %}
-        <title> PythaBlog - {{ title }}</title>
-    {% else %}
-    <title> PythaBlog</title>
-    {% endif %}  
-</head>
-<body>
+{% extends 'layout.html' %}
+{% block content %}
+
     {% for post in posts %}
-        <h1>{{ post.author }}</h1>
-        <h1>{{ post.title }}</h1>
-        <h1>{{ post.content }}</h1>
-        <h1>{{ post.date_posted }}</h1>
+    <h1>{{ post.author }}</h1>
+    <h1>{{ post.title }}</h1>
+    <h1>{{ post.content }}</h1>
+    <h1>{{ post.date_posted }}</h1>
     {% endfor %}
-</body>
-</html>
+    
+{% endblock %}
