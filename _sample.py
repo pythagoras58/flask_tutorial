@@ -1,8 +1,11 @@
 from flask import Flask
 from flask import render_template
+from forms import RegistrationForm, LoginForm
 from flask import url_for
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = 'f8d84fffc14df51ff6c5011166494244' # import secret, secret.token_hex(16)
 
 posts = [
     {
